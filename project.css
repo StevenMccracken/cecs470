@@ -1,0 +1,135 @@
+html {
+	margin: 0px;
+	padding: 1%;
+}
+
+main {
+	text-align: center;
+}
+footer {
+	padding: 0.1em 1em 0em 1em;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/*Header/Navigation*/
+header {
+	padding: 3% 3% 7% 3%;
+	height: 15%;
+}
+header.pageName {
+	float: left;
+	font-size: 3.5em;
+}
+header nav {
+	float: right;
+	margin: 15px 0 15px 0;
+	padding: 20px 10px 0 10px;
+}
+header nav a {
+	color: black;
+	padding: 15px;
+	margin: 15px 0 0 15px;
+	text-decoration: none;
+}
+header nav a:hover:not(.active) {
+    font-weight: bold;
+}
+.active {
+	font-weight: bold;
+}
+/*End Navigation*/
+
+
+/*Image galllery*/
+img.gallery {
+	max-width: 18%;
+	text-align: center;
+	display: inline-block;
+	padding: 0 7% 0 7%;
+}
+.gallery:hover {
+	opacity: 0.7;
+}
+div.clear {
+    clear: both;
+}
+/*End image gallery*/
+
+
+
+
+/*About Page*/
+img.about {
+	float: left;
+	max-width: 40%;
+	padding: 10px;
+}
+
+/*Book Page*/
+fieldset {
+	margin: 0 10% 0 10%;
+	text-align: left;
+	width: 70%
+}
+input, option {
+	width: 60%;
+	padding: 8px;
+}
+legend {
+	padding-left: 15px;
+}
+input.button {
+	text-align: center;
+	width: 10%;
+}
+
+/*Services Page*/
+article {
+	padding: 10px;
+	margin-left: 3%;
+	margin-right: 3%;
+	overflow: hidden;
+}
+img.left {
+	float: left;
+	padding: 8px;
+	max-width: 30%;
+}
+img.right {
+	float: right;
+	padding: 8px;
+	max-width: 30%;
+}
+p.left {
+	text-align: right;
+}
+p.right {
+	text-align: left;
+}
+
+/*Text*/
+header, h1, h2, p.footer, p {
+	font-family: 'Arial', sans-serif;
+}
+a {
+	text-decoration: none;
+}
+p {
+	text-align: left;
+	padding-left: 10px;
+	margin-right: 2%;
+}
+h1 {
+	padding-top: 2em;
+	font-size: 1.7em;
+}
+h2 {
+	text-align: center;
+}
+P.footer {
+	font-size: 0.9em;
+}
+A.footer {
+	color: #333;
+}
