@@ -6,5 +6,5 @@
          <a href="book.php">BOOK</a>
          <a href="aboutphilip.php">ABOUT</a>
       </nav>
-   <div class="clear"></div>	
+   <div class="clear"></div>
 </header>

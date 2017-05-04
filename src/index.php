@@ -13,12 +13,12 @@ if ($error != null) {
 		<title>TITLE</title>
 		<link rel="stylesheet" type="text/css" href="project.css">
 	</head>
-	<p>Student Project - not a commercial site.</p>	
+	<p>Student Project - not a commercial site.</p>
 <?php include 'header.php' ?>
 
-	
+
 	<main>
-      <?php 
+      <?php
          global $conn;
          $headers = ["PORTRAITS", "EVENT PHOTOGRAPHY", "GRADUATION SHOOTS"];
          $sql = "SELECT * FROM Albums;";
@@ -37,10 +37,10 @@ if ($error != null) {
             }
          } else { echo "no result<br>";}
          ?>
-		
+
 		<div class="clear"></div>
 	</main>
-	
+
    <?php include 'footer.php' ?>
-	
+
 </html>
