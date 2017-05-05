@@ -35,7 +35,9 @@ if ($error != null) {
             <?php
                $i++;
             }
+            mysqli_free_result($result);
          } else { echo "no result<br>";}
+         mysqli_close($conn);
          ?>
 		
 		<div class="clear"></div>

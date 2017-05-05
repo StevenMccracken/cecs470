@@ -27,7 +27,9 @@ if ($error != null) {
                <img class="gallery" src="<?php echo $rows["Url"]; ?>" alt="">
             <?php
             }
+         mysqli_free_result($result);
          } else { echo "no result<br>";}
+         mysqli_close($conn);
          ?>
 		
 		<div class="clear"></div>
