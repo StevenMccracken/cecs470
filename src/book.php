@@ -55,4 +55,4 @@
 	<div class="clear"></div>
 </main>
 
-<?php include 'includes/footer.php' ?>	
+<?php include 'includes/footer.php' ?>
