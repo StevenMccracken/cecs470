@@ -40,7 +40,6 @@ header nav a:hover:not(.active) {
 }
 /*End Navigation*/
 
-
 /*Image galllery*/
 img.gallery {
 	max-width: 18%;
@@ -55,9 +54,6 @@ div.clear {
     clear: both;
 }
 /*End image gallery*/
-
-
-
 
 /*About Page*/
 img.about {
@@ -101,15 +97,26 @@ img.right {
 	padding: 8px;
 	max-width: 30%;
 }
-p.left {
+p.left,
+h2.left,
+h3.left {
 	text-align: right;
 }
-p.right {
+p.right,
+h2.right, 
+h3.right {
 	text-align: left;
 }
+div.right { float: left; }
+div.left { float: right; }
+div.package {
+   margin-right: 1em;
+   margin-top: 1em;
+}
+.package p { padding-left: 0; text-align: center; }
 
 /*Text*/
-header, h1, h2, p.footer, p {
+header, h1, h2, h3, p.footer, p {
 	font-family: 'Arial', sans-serif;
 }
 a {
@@ -126,7 +133,9 @@ h1 {
 }
 h2 {
 	text-align: center;
+   font-size: 1.2em;
 }
+h3 { font-size: 0.9em; }
 P.footer {
 	font-size: 0.9em;
 }
