@@ -10,17 +10,17 @@ if ($error != null) {
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title><?php echo $_GET["album"] . " " . $_GET["year"]; ?></title>
+		<title><?php echo $_GET["Album"] . " " . $_GET["Year"]; ?></title>
 		<link rel="stylesheet" type="text/css" href="project.css">
 	</head>
 	<p>Student Project - not a commercial site.</p>	
 <?php include 'header.php' ?>
 	
 	<main>
-   <h1><?php echo $_GET["album"] . " " . $_GET["year"]; ?></h1>
+   <h1><?php echo $_GET["Album"] . " " . $_GET["Year"]; ?></h1>
       <?php 
          global $conn;
-         $sql = "SELECT Url FROM Photos WHERE Album = '". $_GET["album"] . "';";
+         $sql = "SELECT Url FROM Photos WHERE Album = '". $_GET["Album"] . "';";
          $result = mysqli_query($conn, $sql);
          if($result=mysqli_query($conn, $sql)) {
             while($rows=mysqli_fetch_assoc($result)) { ?>

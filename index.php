@@ -10,7 +10,7 @@ if ($error != null) {
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>TITLE</title>
+		<title>PHILIP NGUYEN</title>
 		<link rel="stylesheet" type="text/css" href="project.css">
 	</head>
 	<p>Student Project - not a commercial site.</p>	
@@ -29,7 +29,7 @@ if ($error != null) {
                if($i%3 == 0) {
                    echo "<h1>".$headers[$i/3]."</h1>";
                } ?>
-               <a href="album.php?album=<?php echo $rows["Name"]; ?>&year=<?php echo $rows["Year"] ?> ">
+               <a href="album.php?Album=<?php echo $rows["Name"]; ?>&Year=<?php echo $rows["Year"] ?> ">
                   <img class="gallery" src="<?php echo $rows["CoverUrl"]; ?>" alt="<?php echo $rows["Name"] . " " . $rows["Year"]; ?>">
                </a>
             <?php
