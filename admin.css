@@ -1,4 +1,4 @@
-.admin-login {
+.admin {
   margin: auto;
   box-sizing: border-box;
   width: 50%;
@@ -7,37 +7,37 @@
   margin-bottom: 100px;
 }
 
-.admin-login h1 {
+.admin h1 {
   margin-top: 0;
   padding-top: 0 !important;
 }
 
-.admin-login p {
+.admin p {
   text-align: center;
 }
 
-.admin-login label,
-.admin-login input[type=text],
-.admin-login input[type=password] {
+.admin label,
+.admin input[type=text],
+.admin input[type=password] {
   box-sizing: border-box;
   display: block;
   width: 100%;
   text-align: left !important;
 }
 
-.admin-login label {
+.admin label {
   font-size: 18px;
 }
 
-.admin-login input[type=text],
-.admin-login input[type=password] {
+.admin input[type=text],
+.admin input[type=password] {
   margin-bottom: 20px;
   font-size: 20px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 2px;
 }
 
-.admin-login input[type=submit] {
+.admin input[type=submit] {
   display: block;
   margin: auto;
   width: 120px;
@@ -50,13 +50,13 @@
   outline: 0;
 }
 
-.admin-login input[type=submit]:hover,
-.admin-login input[type=submit]:focus {
+.admin input[type=submit]:hover,
+.admin input[type=submit]:focus {
   background: white;
   color: #03a9f4;
   border-color: #03a9f4;
 }
 
-.admin-login .error {
+.admin .error {
   color: red;
 }

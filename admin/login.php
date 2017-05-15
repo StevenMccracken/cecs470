@@ -40,7 +40,7 @@
 	include '../include/header.php';
 ?>
 
-<main class="admin-login">
+<main class="admin">
 	<h1>Admin panel</h1>
   <form method="post" action="">
 		<p>Login to access admin features</p>
