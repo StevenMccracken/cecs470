@@ -14,15 +14,14 @@ if ($error != null) {
 		<link rel="stylesheet" type="text/css" href="reset.css">
 		<link rel="stylesheet" type="text/css" href="project.css">
 	</head>
-	<p>Student Project - not a commercial site.</p>	
-<?php include 'header.php' ?>
+<?php include 'include/header.php' ?>
 	<main>
 		<h1>SERVICES</h1>
-		
-      <?php 
-      $i = 0; //counter for left/right class logic
-      global $conn;
-      $sql = "SELECT ID, Type, ThumbnailUrl, Description FROM Services;";
+
+      <?php
+        $i = 0; //counter for left/right class logic
+        global $conn;
+        $sql = "SELECT ID, Type, ThumbnailUrl, Description FROM Services;";
          $result = mysqli_query($conn, $sql);
          if($result=mysqli_query($conn, $sql)) {
             while($sRows=mysqli_fetch_assoc($result)) { ?>
@@ -30,7 +29,7 @@ if ($error != null) {
             <img class="<?php if($i%2 == 0) echo "left"; else echo "right"; ?>" src="<?php echo $sRows["ThumbnailUrl"]; ?>" alt="<?php echo $sRows["Type"]; ?> Services" />
             <h2 class="<?php if($i%2 == 0) echo "right"; else echo "left"; ?>"><?php echo strtoupper($sRows["Type"]); ?></h2>
             <p class="<?php if($i%2 == 0) echo "right"; else echo "left"; ?>"><?php echo $sRows["Description"]; ?></p>
-            
+
             <?php //!
             global $conn;
             $pSql = "SELECT Name, Price, Locations, Outfits, Duration FROM Packages WHERE Service = '".$sRows["ID"]."' ORDER BY Duration;";
@@ -49,16 +48,16 @@ if ($error != null) {
             <?php }
                mysqli_free_result($pResult);
             } else { echo "No packages results<br>"; }?>
-            
-         <?php 
+
+         <?php
                $i++;
-           ?> 
+           ?>
          </article> <?php }
             mysqli_free_result($result);
          } else { echo "No services results<br>"; }
          mysqli_close($conn); ?>
-		
+
 		<div class="clear"></div>
 	</main>
-   <?php include 'footer.php' ?>
+   <?php include 'include/footer.php' ?>
 </html>

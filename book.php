@@ -23,13 +23,11 @@
 				$validFields = false;
 			} else $name = $_POST["name"];
 
+			// FIXME: Regex doesn't work even for valid formats
 			if (!isset($_POST["phone"]) || !preg_match('/^([2-9]{3})([\-\.]?)(\d{3})\2?(\d{4})$/', $POST_["phone"])) {
 				$phoneError = 'Invalid phone number';
 				$validFields = false;
 			} else $phone = $_POST["phone"];
-
-			echo $_POST["phone"];
-
 		}
 
 		// If the form submission was successful, display a different page
