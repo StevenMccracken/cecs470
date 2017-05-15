@@ -21,11 +21,11 @@ if ($error != null) {
    <div id="parent_modal">
       <?php
          global $conn;
-         $sql = "SELECT Url FROM Photos WHERE Album = '". $_GET["Album"] . "';";
+         $sql = "SELECT Album, Year, Url FROM Photos WHERE Album = '". $_GET["Album"] . "';";
          $result = mysqli_query($conn, $sql);
          if($result=mysqli_query($conn, $sql)) {
             while($rows=mysqli_fetch_assoc($result)) { ?>
-              <img class="gallery" src="<?php echo $rows["Url"]; ?>" alt="Photo from the album <?php echo $rows["Album"]; ?>">
+              <img class="gallery" src="<?php echo $rows["Url"]; ?>" alt="Photo from the album <?php echo $rows["Album"] . " " . $rows["Year"]; ?>">
 				<?php
             }
          mysqli_free_result($result);
