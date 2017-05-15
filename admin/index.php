@@ -37,7 +37,7 @@
 						<td><img src="<?php echo $service['ThumbnailUrl']; ?>" alt="Service thumbnail"/></td>
 						<td>
 							<a href="service/edit.php?id=<?php echo $service['ID']; ?>">Edit</a>
-							<a href="">Delete</a>
+							<a href="service/delete.php?id=<?php echo $service['ID']; ?>">Delete</a>
 						</td>
 					</tr>
 				<?php } ?>
