@@ -6,8 +6,7 @@
 		<title>PHILIP NGUYEN</title>
 		<link rel="stylesheet" type="text/css" href="project.css">
 	</head>
-	<p>Student Project - not a commercial site.</p>	
-   <?php include 'header.php' ?>
+   <?php include 'include/header.php' ?>
 	<main>
 		<h1>ABOUT PHILIP</h1>
 			<img class="about" src="philip.jpg" alt="Philip Nguyen">
@@ -15,5 +14,5 @@
 			<p>Check out availabale <a href="services.php">services</a> and <a href="book.php">book</a> a session today!</p>
 		<div class="clear"></div>
 	</main>
-   <?php include 'footer.php' ?>
+   <?php include 'include/footer.php' ?>
 </html>

@@ -1,0 +1,62 @@
+.admin {
+  margin: auto;
+  box-sizing: border-box;
+  width: 50%;
+  border: 1px solid grey;
+  padding: 30px 50px;
+  margin-bottom: 100px;
+}
+
+.admin h1 {
+  margin-top: 0;
+  padding-top: 0 !important;
+}
+
+.admin p {
+  text-align: center;
+}
+
+.admin label,
+.admin input[type=text],
+.admin input[type=password] {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  text-align: left !important;
+}
+
+.admin label {
+  font-size: 18px;
+}
+
+.admin input[type=text],
+.admin input[type=password] {
+  margin-bottom: 20px;
+  font-size: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+}
+
+.admin input[type=submit] {
+  display: block;
+  margin: auto;
+  width: 120px;
+  font-size: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  background-color: #03a9f4;
+  color: white;
+  cursor: pointer;
+  outline: 0;
+}
+
+.admin input[type=submit]:hover,
+.admin input[type=submit]:focus {
+  background: white;
+  color: #03a9f4;
+  border-color: #03a9f4;
+}
+
+.admin .error {
+  color: red;
+}

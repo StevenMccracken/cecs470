@@ -1,16 +1,8 @@
 #!/usr/local/php5/bin/php-cgi
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>TITLE</title>
-	<link rel="stylesheet" type="text/css" href="project.css">
-	<link rel="stylesheet" type="text/css" href="book.css">
-</head>
-<p>Student Project - not a commercial site.</p>
-<?php include 'header.php' ?>
-
-
+<?php
+	include 'include/setup.php';
+	include 'include/header.php';
+?>
 <main>
 
 	<h1>BOOK A SESSION</h1>
@@ -43,18 +35,18 @@
 			echo 'ayy';
 		} else {
 			// Display the form because it was either incorrect or not submitted
-			echo '
+			?>
 			<form method="post" name="" id="" action="">
 				<fieldset>
 					<legend>Your Information</legend>
 					<div id="getCust">
 						<label for="name">Name:</label>
-						<input type="text" name="name" id="name" class="required" placeholder="required" value="' . $name . '" />
-						<span>' . $nameError . '</span><br><br>
+						<input type="text" name="name" id="name" class="required" placeholder="required" value=" <?php echo $name; ?>" />
+						<span><?php echo $nameError; ?></span><br><br>
 
 						<label for="phone">Phone:</label>
-						<input type="tel" name="phone" id="phone" class="required" placeholder="required" pattern="^([2-9]{3})([\-\.]?)(\d{3})\2?(\d{4})$" value="' . $phone . '">
-						<span>' . $phoneError . '</span>
+						<input type="tel" name="phone" id="phone" class="required" placeholder="required" pattern="^([2-9]{3})([\-\.]?)(\d{3})\2?(\d{4})$" value=" <?php echo $phone; ?>">
+						<span><?php echo $phoneError; ?></span>
 					</div>
 				</fieldset>
 				<br>
@@ -86,13 +78,11 @@
 				<input class="button" name="submit" value="Submit" type="submit">
 
 
-			</form>';
+			</form>
+		<?php
 		}
 	?>
 
-
 	<div class="clear"></div>
 </main>
-
-<?php include 'footer.php' ?>
-</html>
+<?php include 'include/footer.php' ?>
