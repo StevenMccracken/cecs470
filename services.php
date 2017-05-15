@@ -1,4 +1,5 @@
 #!/usr/local/php5/bin/php-cgi
+#!/usr/local/php5/bin/php-cgi
 <?php include 'config.php';
 $conn = mysqli_connect(DBHOST, DBUSER, DBPASS, DBNAME);
 $error = mysqli_connect_error();
