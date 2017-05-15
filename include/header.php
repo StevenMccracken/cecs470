@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title><?php if (isset($title)) echo $title; else echo "TITLE"; ?></title>
 		<link rel="stylesheet" type="text/css" href="<?php echo $path; ?>project.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo $path; ?>admin.css">
 	</head>
   <body>
   	<p>Student Project - not a commercial site.</p>

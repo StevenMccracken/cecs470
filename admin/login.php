@@ -40,15 +40,16 @@
 	include '../include/header.php';
 ?>
 
-<main>
+<main class="admin-login">
 	<h1>Admin panel</h1>
   <form method="post" action="">
-		<?php echo $error; ?>
+		<p>Login to access admin features</p>
+		<?php if (!empty($error)) echo "<div class=\"error\">$error</div>"; ?>
 		<label for="username">Username</label>
 		<input type="text" id ="username" name="username" placeholder="username" required />
 		<label for="password">Password</label>
 		<input type="password" id="password" name="password" placeholder="password" required />
-		<input type="submit" />
+		<input type="submit" value="Log in" />
   </form>
 	<div class="clear"></div>
 </main>

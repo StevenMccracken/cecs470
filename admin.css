@@ -1,0 +1,62 @@
+.admin-login {
+  margin: auto;
+  box-sizing: border-box;
+  width: 50%;
+  border: 1px solid grey;
+  padding: 30px 50px;
+  margin-bottom: 100px;
+}
+
+.admin-login h1 {
+  margin-top: 0;
+  padding-top: 0 !important;
+}
+
+.admin-login p {
+  text-align: center;
+}
+
+.admin-login label,
+.admin-login input[type=text],
+.admin-login input[type=password] {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  text-align: left !important;
+}
+
+.admin-login label {
+  font-size: 18px;
+}
+
+.admin-login input[type=text],
+.admin-login input[type=password] {
+  margin-bottom: 20px;
+  font-size: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 2px;
+}
+
+.admin-login input[type=submit] {
+  display: block;
+  margin: auto;
+  width: 120px;
+  font-size: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  background-color: #03a9f4;
+  color: white;
+  cursor: pointer;
+  outline: 0;
+}
+
+.admin-login input[type=submit]:hover,
+.admin-login input[type=submit]:focus {
+  background: white;
+  color: #03a9f4;
+  border-color: #03a9f4;
+}
+
+.admin-login .error {
+  color: red;
+}
