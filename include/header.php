@@ -11,7 +11,7 @@
   	<p>Student Project - not a commercial site.</p>
 
     <header>
-     <div class="pageName">PHILIP NGUYEN/LOGO</div>
+     <img class="logo" src="logo.jpg" alt="Philip Nguyen Photography">
         <nav>
            <a href="<?php echo $path; ?>index.php">HOME</a>
            <a href="<?php echo $path; ?>services.php">SERVICES</a>
