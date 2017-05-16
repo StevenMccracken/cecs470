@@ -10,22 +10,24 @@
 
 	<?php
 		$success = false;
-		$phoneRegex = '^([2-9]{3})([\-\.]?)(\d{3})\2?(\d{4})$';
+		$phoneRegex = '^[2-9]{1}[\d]{9}$';
 		$nameError = $phoneError = '';
 		$name = $phone = '';
 
 		// Check if the form has been submitted and validate fields
 		if (isset($_POST["submit"])) {
+			foreach ($_POST as $key => $value) {
+				echo $key . ': ' . $value;
+			}
+
 			// Assume the fields have been filled out correctly
 			$validFields = true;
-
-			if (!isset($_POST["name"]) || !preg_match('/^[a-zA-Z]+[a-zA-Z\.\-\s]*$/', $_POST["name"])) {
+			if (!isset($_POST["name"]) || preg_match('/^[a-zA-Z]+[a-zA-Z\.\-\s]*$/', $_POST["name"]) === 0) {
 				$nameError = 'Invalid name';
 				$validFields = false;
 			} else $name = $_POST["name"];
 
-			// FIXME: Regex doesn't work even for valid formats
-			if (!isset($_POST["phone"]) || !preg_match('/^([2-9]{3})([\-\.]?)(\d{3})\2?(\d{4})$/', $POST_["phone"])) {
+			if (!isset($_POST["phone"]) || preg_match('/^[2-9]{1}[\d]{9}$/', $_POST["phone"]) === 0) {
 				$phoneError = 'Invalid phone number';
 				$validFields = false;
 			} else $phone = $_POST["phone"];
@@ -42,11 +44,11 @@
 					<legend>Your Information</legend>
 					<div id="getCust">
 						<label for="name">Name:</label>
-						<input type="text" name="name" id="name" class="required" placeholder="required" value=" <?php echo $name; ?>" />
+						<input type="text" name="name" id="name" class="required" placeholder="required" value="<?php echo $name; ?>" />
 						<span><?php echo $nameError; ?></span><br><br>
 
 						<label for="phone">Phone:</label>
-						<input type="tel" name="phone" id="phone" class="required" placeholder="required" pattern="^([2-9]{3})([\-\.]?)(\d{3})\2?(\d{4})$" value=" <?php echo $phone; ?>">
+						<input type="tel" name="phone" id="phone" class="required" placeholder="required" pattern="^[2-9]{1}[\d]{9}$" value="<?php echo $phone; ?>" />
 						<span><?php echo $phoneError; ?></span>
 					</div>
 				</fieldset>
