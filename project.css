@@ -17,6 +17,10 @@ header {
 	padding: 3% 3% 7% 3%;
 	height: 15%;
 }
+img.logo {
+	max-width: 100%;
+    height: auto; 
+}
 header.pageName {
 	float: left;
 	font-size: 3.5em;
