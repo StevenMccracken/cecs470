@@ -6,9 +6,14 @@
     $path = './';
   }
 
+  $isLog = false;
+  if (isset($_SESSION['auth']) && $_SESSION['auth']) {
+    $isLog = true;
+  }
+
   // if we set $protected, we need to be authenticated
   if (isset($protected) and $protected == true) {
-    if (!isset($_SESSION['auth']) or $_SESSION['auth'] == false) {
+    if (!isLog) {
       header('location:' . $path . 'admin/login.php');
       exit(0);
     }

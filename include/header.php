@@ -17,6 +17,10 @@
            <a href="<?php echo $path; ?>services.php">SERVICES</a>
            <a href="<?php echo $path; ?>book.php">BOOK</a>
            <a href="<?php echo $path; ?>aboutphilip.php">ABOUT</a>
+					 <?php if ($isLog) { ?>
+						 <a href="<?php echo $path; ?>admin/index.php">ADMIN</a>
+						 <a href="<?php echo $path; ?>admin/logout.php">LOGOUT</a>
+					 <?php } ?>
         </nav>
      <div class="clear"></div>
    </header>
