@@ -24,12 +24,12 @@
 	include '../include/header.php';
 ?>
 
-<main>
+<main class="admin-index">
 	<h1>Admin panel</h1>
 	<a href="logout.php">Logout</a>
 
 	<h2>Services</h2>
-	<a href="service/edit.php">Create</a>
+	<a class="button" href="service/edit.php">Create service</a>
 	<table>
 		<thead>
 	    <tr>
@@ -54,8 +54,9 @@
 	  </tbody>
 	</table>
 
-	<hr />
+	<hr /><br /><br />
 	<h2>Packages</h2>
+	<a class="button" href="package/edit.php">Create package</a>
 	<table>
 	  <thead>
 	    <tr>
