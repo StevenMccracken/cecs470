@@ -7,9 +7,6 @@
 ?>
 <link rel="stylesheet" type="text/css" href="book.css">
 <main>
-
-	<h1>BOOK A SESSION</h1>
-
 	<?php
 		$nameError = $phoneError = $packageError = $dateError = $timeError = $dateTimeError = '';
 		$name = $phone = $selectedPackage = $date = $time = $dateTime = $special = '';
@@ -76,7 +73,7 @@
 				if ($beginningOfToday + 432000 > $sessionTimestamp) {
 					$validForm = false;
 					$validDateTime = false;
-					$dateTimeError = 'Your must request an appointment at least 5 days in advance';
+					$dateTimeError = 'You must request an appointment at least 5 days in advance';
 				}
 
 				if ($validDateTime) {
@@ -93,6 +90,7 @@
 		}
 
 		// Save request in DB and display their order information if form is valid
+		$savedToDatabase = false;
 		if ($validForm) {
 			// Get date and time into correct format for DB
 			$appointmentDate = date_create();
@@ -101,19 +99,22 @@
 
 			// Get values for package and special for DB insertion
 			$packageId = $_POST["package"];
-			$special = $special != '' ? "'$special'" : "NULL";
+			$special = $special != '' ? $special : null;
 
 			// Include setup.php to re-open connection
 			include 'include/setup.php';
 
 			// Create INSERT statement
-			$sql = "INSERT INTO
+			$stmt = $conn->prepare('INSERT INTO
 				cecs470og3.Requests (name, phone, package, date, specialRequest)
-				VALUES ('$name', '$phone', '$packageId', '$appointmentDate', $special);";
+				VALUES (?, ?, ?, ?, ?)');
+
+			$stmt->bind_param('ssiss', $name, $phone, $packageId, $appointmentDate, $special);
 
 			// Execute database insert
-			$result = mysqli_query($conn, $sql);
-			if (mysqli_query($conn, $sql)) {
+
+			if ($stmt->execute()) {
+				$savedToDatabase = true;
 		    ?>
 				<h2>Philip has received your order request</h2><br>
 				<div id="summary"><ul>
@@ -122,19 +123,23 @@
 					echo '<li><b>Phone number: </b>' . $phone . '</li>';
 					echo '<li><b>Package: </b>' . $selectedPackage . '</li>';
 					echo '<li><b>Appointment date: </b>' . $appointmentDate . '</li>';
-					if ($special !== "NULL") {
+					if ($special !== null) {
 						echo '<li><b>Special request: </b>' . $special . '</li>';
 					} ?>
 				</ul></div>
 			<?php
 			} else {
-		    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+		    echo '<h2>Unable to process your request. Please try again</h2><br>';
 			}
 
+			$stmt->close();
 			mysqli_close($conn);
-		} else {
+		}
+
+		if (!$validForm || !$savedToDatabase) {
 			// Display the form because it was either incorrect or not submitted
 			?>
+			<h1>BOOK A SESSION</h1>
 			<form method="post" name="" id="" action="">
 				<fieldset>
 					<legend>Personal Information</legend>
@@ -144,7 +149,7 @@
 						<span><?php echo $nameError; ?></span><br><br>
 
 						<label for="phone">Phone:</label>
-						<input type="tel" name="phone" id="phone" class="required" placeholder="required" pattern="^[2-9]{1}[\d]{9}$" required value="<?php echo $phone; ?>" />
+						<input type="tel" name="phone" id="phone" class="required" placeholder="required (10-digit number)" pattern="^[2-9]{1}[\d]{9}$" maxlength="10" required value="<?php echo $phone; ?>" />
 						<span><?php echo $phoneError; ?></span>
 					</div>
 				</fieldset><br><br>
