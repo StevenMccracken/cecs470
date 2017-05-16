@@ -2,7 +2,8 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title><?php if (isset($title)) echo $title; else echo "TITLE"; ?></title>
+		<title><?php if (isset($title)) echo $title; else echo "PHILIP NGUYEN"; ?></title>
+		<link rel="stylesheet" type="text/css" href="<?php echo $path; ?>reset.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo $path; ?>project.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo $path; ?>admin.css">
 	</head>
