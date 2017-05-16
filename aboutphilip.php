@@ -2,6 +2,7 @@
 <?php
 	include 'include/setup.php';
 	include 'include/header.php';
+	include 'include/active.php';
 ?>
 <main>
 	<h1>ABOUT PHILIP</h1>

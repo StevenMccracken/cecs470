@@ -4,6 +4,7 @@
   $title = 'SERVICE';
 	include 'include/setup.php';
 	include 'include/header.php';
+	include 'include/active.php';
 ?>
 <main>
 	<h1>SERVICES</h1>

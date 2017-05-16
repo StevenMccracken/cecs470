@@ -30,11 +30,18 @@
 }
 
 .admin input[type=text],
-.admin input[type=password] {
+.admin input[type=password],
+.admin textarea {
+  width: 100%;
   margin-bottom: 20px;
   font-size: 20px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 2px;
+}
+
+.admin textarea {
+  box-sizing: border-box;
+  padding: 5px;
 }
 
 .admin input[type=submit] {
@@ -59,4 +66,80 @@
 
 .admin .error {
   color: red;
+}
+
+.admin-index {
+  padding: 0 15%;
+}
+
+.admin-index h1 {
+  padding-top: 0 !important;
+}
+
+.admin-index h2 {
+  text-align: left;
+}
+
+.admin-index table {
+  width: 100%;
+  font-family: 'Arial';
+  margin: 25px auto;
+  border-collapse: collapse;
+  border: 1px solid #eee;
+  border-bottom: 2px solid #03a9f4;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.05), 0px 20px 20px rgba(0, 0, 0, 0.05), 0px 30px 20px rgba(0, 0, 0, 0.05);
+}
+
+.admin-index  table tr:hover {
+  background: #f4f4f4;
+}
+
+.admin-index table tr:hover td {
+  color: #555;
+}
+
+.admin-index table th,
+.admin-index table td {
+  color: #999;
+  border: 1px solid #eee;
+  padding: 12px 30px;
+  border-collapse: collapse;
+}
+
+.admin-index table td img {
+  width: 200px;
+}
+
+.admin-index table th {
+  background: #03a9f4;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.admin-index table th.last {
+  border-right: none;
+}
+
+.admin-index table a {
+  color: #0187d2;
+}
+
+.admin-index table a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+.admin-index a.button {
+  display: inline-block;
+  margin: 15px 0;
+  font-size: 18px;
+  padding: 10px 15px;
+  float: right;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  background-color: #03a9f4;
+  color: white;
+  cursor: pointer;
+  outline: 0;
 }

@@ -11,12 +11,16 @@
   	<p>Student Project - not a commercial site.</p>
 
     <header>
-     <div class="pageName">PHILIP NGUYEN/LOGO</div>
+     <img class="logo" src="<?php echo $path; ?>logo.jpg" alt="Philip Nguyen Photography">
         <nav>
            <a href="<?php echo $path; ?>index.php">HOME</a>
            <a href="<?php echo $path; ?>services.php">SERVICES</a>
            <a href="<?php echo $path; ?>book.php">BOOK</a>
            <a href="<?php echo $path; ?>aboutphilip.php">ABOUT</a>
+					 <?php if ($isLog) { ?>
+						 <a href="<?php echo $path; ?>admin/index.php">ADMIN</a>
+						 <a href="<?php echo $path; ?>admin/logout.php">LOGOUT</a>
+					 <?php } ?>
         </nav>
      <div class="clear"></div>
    </header>

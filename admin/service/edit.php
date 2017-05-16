@@ -66,7 +66,7 @@
 		<input type="text" id="url" name="url" placeholder="url" value="<?php echo $url;?>" required />
 
 			<label for="description">Description</label>
-			<textarea id="description" name="description" placeholder="Description" required><?php echo $description;?></textarea>
+			<textarea id="description" name="description" placeholder="Description" rows="5" required><?php echo $description;?></textarea>
 
 		<input type="submit" value="<?php echo $verb; ?>" />
 	</form>
