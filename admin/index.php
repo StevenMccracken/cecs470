@@ -25,6 +25,7 @@
 				<th>Package</th>
 				<th>Date</th>
 				<th>Special Request</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -35,6 +36,9 @@
 					<td><?php echo htmlspecialchars($request['Type'] . ' - ' . $request['Name']); ?></td>
 					<td><?php echo htmlspecialchars($request['date']); ?></td>
 					<td><?php echo htmlspecialchars($request['specialRequest']); ?></td>
+					<td>
+						<a href="request/delete.php?id=<?php echo $request['ID']; ?>">Delete</a>
+					</td>
 				</tr>
 			<?php } ?>
 		</tbody>
