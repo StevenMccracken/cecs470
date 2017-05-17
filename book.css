@@ -1,3 +1,12 @@
+header {
+  height: 0;
+}
+
+h1 {
+  margin-bottom: 2%;
+  font-size: 300%;
+}
+
 ul {
   text-align: left;
   list-style-type: none;
@@ -5,4 +14,81 @@ ul {
 
 #summary {
   margin: 25 auto;
+}
+
+fieldset {
+  margin-top: 0;
+	margin-right: 20%;
+  margin-left: 20%;
+	text-align: left;
+	width: 75%;
+  border: none;
+}
+
+#top {
+  margin-bottom: 0;
+}
+
+#bottom {
+  margin-bottom: 5%;
+}
+
+input, option {
+	width: 75%;
+	padding: 8px;
+}
+
+.section {
+  margin: 15px 15px 15px 15px;
+}
+
+.section label {
+  font-size: 210%;
+}
+
+input[type="text"], input[type="tel"], input[type="date"], input[type="time"], select {
+  border: none;
+  font-size: 150%;
+}
+
+select {
+  -webkit-appearance: none;
+  background-color: white;
+  padding-bottom: 20px;
+}
+
+option[value=None] {
+  color: gray;
+}
+
+input::placeholder {
+  color: gray;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-style: italic;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-style: italic;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-style: italic;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-style: italic;
+}
+
+input.button {
+  font-size: 115%;
+  border: none;
+	text-align: center;
+	width: 10%;
+  background-color: black;
+  color: white;
+}
+
+input.button:hover {
+  border: 1px solid black;
+  background-color: white;
+  color: black;
 }
