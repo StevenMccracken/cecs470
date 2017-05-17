@@ -14,7 +14,7 @@
 			$error = "Please fill out the form";
 		}
 		else {
-			$password = $_POST['password'];
+			$password = sha1($_POST['password']);
 			$result = getUser($_POST['username']);
 			if (!result)
 				$error = "Error with the database, please try again later";
