@@ -163,7 +163,7 @@ div.package {
 .package p { padding-left: 0; text-align: center; }
 
 /*Text*/
-header, h1, h2, h3, p.footer, p, #caption, figcaption  {
+body  {
 	font-family: 'Muli', 'Arial', sans-serif;
 }
 a {
