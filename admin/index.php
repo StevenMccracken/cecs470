@@ -37,7 +37,7 @@
 					<td><?php echo htmlspecialchars($request['date']); ?></td>
 					<td><?php echo htmlspecialchars($request['specialRequest']); ?></td>
 					<td>
-						<a href="request/delete.php?id=<?php echo $request['ID']; ?>">Delete</a>
+						<a onclick="return confirm('Are you sure?')" href="request/delete.php?id=<?php echo $request['ID']; ?>">Delete</a>
 					</td>
 				</tr>
 			<?php } ?>
@@ -65,7 +65,7 @@
 						<td><img src="<?php echo $service['ThumbnailUrl']; ?>" alt="Service thumbnail"/></td>
 						<td>
 							<a href="service/edit.php?id=<?php echo $service['ID']; ?>">Edit</a>
-							<a href="service/delete.php?id=<?php echo $service['ID']; ?>">Delete</a>
+							<a onclick="return confirm('Are you sure?')" href="service/delete.php?id=<?php echo $service['ID']; ?>">Delete</a>
 						</td>
 					</tr>
 				<?php } ?>
@@ -98,7 +98,7 @@
 					<td><?php echo htmlspecialchars($package['Duration']); ?></td>
 					<td>
 						<a href="package/edit.php?id=<?php echo $package['ID']; ?>">Edit</a>
-						<a href="package/delete.php?id=<?php echo $package['ID']; ?>">Delete</a>
+						<a onclick="return confirm('Are you sure?')" href="package/delete.php?id=<?php echo $package['ID']; ?>">Delete</a>
 					</td>
 				</tr>
 			<?php } ?>
