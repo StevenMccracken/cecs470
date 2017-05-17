@@ -31,7 +31,10 @@
 
 .admin input[type=text],
 .admin input[type=password],
-.admin textarea {
+.admin input[type=number],
+.admin textarea,
+.admin select {
+  box-sizing: border-box;
   width: 100%;
   margin-bottom: 20px;
   font-size: 20px;
@@ -40,8 +43,12 @@
 }
 
 .admin textarea {
-  box-sizing: border-box;
   padding: 5px;
+}
+
+.admin select {
+  background-color: white;
+  padding: 10px 0;
 }
 
 .admin input[type=submit] {
@@ -55,6 +62,10 @@
   color: white;
   cursor: pointer;
   outline: 0;
+}
+
+.admin select {
+  margin-left: 0;
 }
 
 .admin input[type=submit]:hover,

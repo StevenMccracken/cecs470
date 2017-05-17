@@ -17,9 +17,13 @@
              if($i%3 == 0) {
                  echo "<h1>".$headers[$i/3]."</h1>";
              } ?>
-             <a href="album.php?Album=<?php echo $rows["Name"]; ?>&Year=<?php echo $rows["Year"] ?> ">
-                <img class="gallery" src="<?php echo $rows["CoverUrl"]; ?>" alt="<?php echo $rows["Name"] . " " . $rows["Year"]; ?>">
-             </a>
+			 <figure class="cap-bot">
+				<a href="album.php?Album=<?php echo $rows["Name"]; ?>&Year=<?php echo $rows["Year"] ?>">
+					<img class="gallery" src="<?php echo $rows["CoverUrl"];?>" alt="<?php echo $rows["Name"];?>"></a>
+					<figcaption>
+						<?php echo $rows["Name"] . " " . $rows["Year"];?>
+					</figcaption>
+			 </figure>
           <?php
              $i++;
           }

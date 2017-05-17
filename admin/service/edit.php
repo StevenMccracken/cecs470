@@ -55,6 +55,7 @@
 	include '../../include/header.php';
 ?>
 <main class="admin">
+	<a href="../index.php">Back to admin panel</a>
 	<h1><?php echo $verb;?> Service</h1>
 	<form method="post" action="">
 		<?php if (!empty($error)) echo "<div class=\"error\">$error</div>"; ?>

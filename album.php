@@ -15,7 +15,7 @@
        $result = mysqli_query($conn, $sql);
        if($result=mysqli_query($conn, $sql)) {
           while($rows=mysqli_fetch_assoc($result)) { ?>
-            <img class="gallery" src="<?php echo $rows["Url"]; ?>" alt="Photo from the album <?php echo $rows["Album"] . " " . $rows["Year"]; ?>">
+            <img class="albumGallery" src="<?php echo $rows["Url"]; ?>" alt="Photo from the album <?php echo $rows["Album"] . " " . $rows["Year"]; ?>">
 		<?php
           }
        mysqli_free_result($result);
@@ -27,7 +27,7 @@
 		<!-- The Modal -->
 	<div id="myModal" class="modal">
 	  <span class="close">&times;</span>
-	  <img class="modal-content" id="img01" src="">
+	  <img class="modal-content" id="img01">
 	  <div id="caption"></div>
 	</div>
 </main>
@@ -42,6 +42,7 @@
 		 modal.style.display = "block";
 		 modalImg.src = this.src;
 		 captionText.innerHTML = this.alt;
+		 modalImg.alt = this.alt;
 		}
 	}
 	// Get the <span> element that closes the modal

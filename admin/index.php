@@ -4,21 +4,10 @@
 	$path = '../';
 	$protected = true;
 	include '../include/setup.php';
+	include '../include/models.php';
 
-	function getServices() {
-		global $conn;
-		$sql = "SELECT * FROM Services;";
-		return mysqli_query($conn, $sql);
-	}
-
+	$requests = getRequests();
 	$services = getServices();
-
-	function getPackages() {
-		global $conn;
-		$sql = "SELECT * FROM Packages LEFT JOIN Services ON Packages.Service = Services.ID";
-		return mysqli_query($conn, $sql);
-	}
-
 	$packages = getPackages();
 
 	include '../include/header.php';
@@ -26,7 +15,36 @@
 
 <main class="admin-index">
 	<h1>Admin panel</h1>
-	<a href="logout.php">Logout</a>
+
+	<h2>Request from users</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Phone</th>
+				<th>Package</th>
+				<th>Date</th>
+				<th>Special Request</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php while($request = mysqli_fetch_assoc($requests)) { ?>
+				<tr>
+					<td><?php echo htmlspecialchars($request['name']); ?></td>
+					<td><?php echo htmlspecialchars($request['phone']); ?></td>
+					<td><?php echo htmlspecialchars($request['Type'] . ' - ' . $request['Name']); ?></td>
+					<td><?php echo htmlspecialchars($request['date']); ?></td>
+					<td><?php echo htmlspecialchars($request['specialRequest']); ?></td>
+					<td>
+						<a onclick="return confirm('Are you sure?')" href="request/delete.php?id=<?php echo $request['ID']; ?>">Delete</a>
+					</td>
+				</tr>
+			<?php } ?>
+		</tbody>
+	</table>
+	<hr /><br /><br />
+
 
 	<h2>Services</h2>
 	<a class="button" href="service/edit.php">Create service</a>
@@ -42,12 +60,12 @@
 	  <tbody>
 				<?php while($service = mysqli_fetch_assoc($services)) { ?>
 					<tr>
-						<td><?php echo $service['Type']; ?></td>
-						<td><?php echo $service['Description']; ?></td>
+						<td><?php echo htmlspecialchars($service['Type']); ?></td>
+						<td><?php echo htmlspecialchars($service['Description']); ?></td>
 						<td><img src="<?php echo $service['ThumbnailUrl']; ?>" alt="Service thumbnail"/></td>
 						<td>
 							<a href="service/edit.php?id=<?php echo $service['ID']; ?>">Edit</a>
-							<a href="service/delete.php?id=<?php echo $service['ID']; ?>">Delete</a>
+							<a onclick="return confirm('Are you sure?')" href="service/delete.php?id=<?php echo $service['ID']; ?>">Delete</a>
 						</td>
 					</tr>
 				<?php } ?>
@@ -72,15 +90,15 @@
 	  <tbody>
 			<?php while($package = mysqli_fetch_assoc($packages)) { ?>
 				<tr>
-					<td><?php echo $package['Type']; ?></td>
-					<td><?php echo $package['Name']; ?></td>
-					<td><?php echo $package['Price']; ?>$</td>
-					<td><?php echo $package['Locations']; ?></td>
-					<td><?php echo $package['Outfits']; ?></td>
-					<td><?php echo $package['Duration']; ?></td>
+					<td><?php echo htmlspecialchars($package['Type']); ?></td>
+					<td><?php echo htmlspecialchars($package['Name']); ?></td>
+					<td><?php echo htmlspecialchars($package['Price']); ?>$</td>
+					<td><?php echo htmlspecialchars($package['Locations']); ?></td>
+					<td><?php echo htmlspecialchars($package['Outfits']); ?></td>
+					<td><?php echo htmlspecialchars($package['Duration']); ?></td>
 					<td>
 						<a href="package/edit.php?id=<?php echo $package['ID']; ?>">Edit</a>
-						<a href="package/delete.php?id=<?php echo $package['ID']; ?>">Delete</a>
+						<a onclick="return confirm('Are you sure?')" href="package/delete.php?id=<?php echo $package['ID']; ?>">Delete</a>
 					</td>
 				</tr>
 			<?php } ?>
