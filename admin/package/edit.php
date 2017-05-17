@@ -4,12 +4,7 @@
 	$path = '../../';
 	$protected = true;
 	include '../../include/setup.php';
-
-	function getServices() {
-		global $conn;
-		$sql = "SELECT * FROM Services;";
-		return mysqli_query($conn, $sql);
-	}
+	include '../../include/models.php';
 
 	$services = getServices();
 
@@ -73,6 +68,7 @@
 	include '../../include/header.php';
 ?>
 <main class="admin">
+	<a href="../index.php">Back to admin panel</a>
 	<h1><?php echo $verb;?> Package</h1>
 	<form method="post" action="">
 		<?php if (!empty($error)) echo "<div class=\"error\">$error</div>"; ?>

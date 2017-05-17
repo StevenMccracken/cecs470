@@ -4,21 +4,9 @@
 	$path = '../';
 	$protected = true;
 	include '../include/setup.php';
-
-	function getServices() {
-		global $conn;
-		$sql = "SELECT * FROM Services;";
-		return mysqli_query($conn, $sql);
-	}
+	include '../include/models.php';
 
 	$services = getServices();
-
-	function getPackages() {
-		global $conn;
-		$sql = "SELECT * FROM Packages LEFT JOIN Services ON Packages.Service = Services.ID";
-		return mysqli_query($conn, $sql);
-	}
-
 	$packages = getPackages();
 
 	include '../include/header.php';
@@ -26,8 +14,6 @@
 
 <main class="admin-index">
 	<h1>Admin panel</h1>
-	<a href="logout.php">Logout</a>
-
 	<h2>Services</h2>
 	<a class="button" href="service/edit.php">Create service</a>
 	<table>
@@ -42,8 +28,8 @@
 	  <tbody>
 				<?php while($service = mysqli_fetch_assoc($services)) { ?>
 					<tr>
-						<td><?php echo $service['Type']; ?></td>
-						<td><?php echo $service['Description']; ?></td>
+						<td><?php echo htmlspecialchars($service['Type']); ?></td>
+						<td><?php echo htmlspecialchars($service['Description']); ?></td>
 						<td><img src="<?php echo $service['ThumbnailUrl']; ?>" alt="Service thumbnail"/></td>
 						<td>
 							<a href="service/edit.php?id=<?php echo $service['ID']; ?>">Edit</a>
@@ -72,12 +58,12 @@
 	  <tbody>
 			<?php while($package = mysqli_fetch_assoc($packages)) { ?>
 				<tr>
-					<td><?php echo $package['Type']; ?></td>
-					<td><?php echo $package['Name']; ?></td>
-					<td><?php echo $package['Price']; ?>$</td>
-					<td><?php echo $package['Locations']; ?></td>
-					<td><?php echo $package['Outfits']; ?></td>
-					<td><?php echo $package['Duration']; ?></td>
+					<td><?php echo htmlspecialchars($package['Type']); ?></td>
+					<td><?php echo htmlspecialchars($package['Name']); ?></td>
+					<td><?php echo htmlspecialchars($package['Price']); ?>$</td>
+					<td><?php echo htmlspecialchars($package['Locations']); ?></td>
+					<td><?php echo htmlspecialchars($package['Outfits']); ?></td>
+					<td><?php echo htmlspecialchars($package['Duration']); ?></td>
 					<td>
 						<a href="package/edit.php?id=<?php echo $package['ID']; ?>">Edit</a>
 						<a href="package/delete.php?id=<?php echo $package['ID']; ?>">Delete</a>

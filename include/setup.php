@@ -2,10 +2,12 @@
   session_start();
   include 'config.php';
 
+  // useful if the page are in a nested folder (admin)
   if (!isset($path)) {
     $path = './';
   }
 
+  // get the status
   $isLog = false;
   if (isset($_SESSION['auth']) && $_SESSION['auth']) {
     $isLog = true;
