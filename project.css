@@ -121,8 +121,8 @@ div.package {
 .package p { padding-left: 0; text-align: center; }
 
 /*Text*/
-header, h1, h2, h3, p.footer, p {
-	font-family: 'Arial', sans-serif;
+header, h1, h2, h3, p.footer, p, #caption {
+	font-family: 'Muli', 'Arial', sans-serif;
 }
 a {
 	text-decoration: none;

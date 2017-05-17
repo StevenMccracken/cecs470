@@ -6,6 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="<?php echo $path; ?>reset.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo $path; ?>project.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo $path; ?>admin.css">
+      <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
 	</head>
   <body>
   	<p>Student Project - not a commercial site.</p>

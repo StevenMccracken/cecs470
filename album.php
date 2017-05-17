@@ -27,7 +27,7 @@
 		<!-- The Modal -->
 	<div id="myModal" class="modal">
 	  <span class="close">&times;</span>
-	  <img class="modal-content" id="img01" src="">
+	  <img class="modal-content" id="img01" src="" alt="">
 	  <div id="caption"></div>
 	</div>
 </main>
@@ -42,6 +42,7 @@
 		 modal.style.display = "block";
 		 modalImg.src = this.src;
 		 captionText.innerHTML = this.alt;
+       modalImg.alt = this.alt;
 		}
 	}
 	// Get the <span> element that closes the modal
