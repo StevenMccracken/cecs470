@@ -122,7 +122,7 @@
 					echo '<li><b>Name: </b>' . $name . '</li>';
 					echo '<li><b>Phone number: </b>' . $phone . '</li>';
 					echo '<li><b>Package: </b>' . $selectedPackage . '</li>';
-					echo '<li><b>Appointment date: </b>' . $appointmentDate . '</li>';
+					echo '<li><b>Appointment date: </b>' . date('M jS, Y @ g:i A', $sessionTimestamp) . '</li>';
 					if ($special !== null) {
 						echo '<li><b>Special request: </b>' . $special . '</li>';
 					} ?>
@@ -140,26 +140,26 @@
 			// Display the form because it was either incorrect or not submitted
 			?>
 			<h1>BOOK A SESSION</h1>
-			<form method="post" name="" id="" action="">
+			<form method="post" name="book" id="book">
 				<fieldset id="top">
 					<div id="nameSection" class="section">
 						<label for="name">Name</label><br>
 						<input type="text" maxlength="50" name="name" id="name" class="required" placeholder="required" pattern=".{2,50}" required value="<?php echo $name; ?>" />
-						<span><?php echo $nameError; ?></span>
+						<br><span><?php echo $nameError; ?></span>
 					</div>
 
 					<div id="phoneSection" class="section">
-						<label for="phone">Phone</label><br>
-						<input type="tel" name="phone" id="phone" class="required" placeholder="required (10-digit number)" pattern="^[2-9]{1}[\d]{9}$" maxlength="10" required value="<?php echo $phone; ?>" />
-						<span><?php echo $phoneError; ?></span>
+						<label for="phone">Phone</label><span id="subPhone">(10-digit number)</span><br>
+						<input type="tel" name="phone" id="phone" class="required" placeholder="required" pattern="^[2-9]{1}[\d]{9}$" maxlength="10" required value="<?php echo $phone; ?>" />
+						<br><span><?php echo $phoneError; ?></span>
 					</div>
 				</fieldset>
 
 				<fieldset id="bottom">
 					<div id="packageSection" class="section">
-						<label for="package">Package</label><br>
+						<label for="packages">Package</label><br>
 						<select required name="package" id="packages" class="inline">
-							<option value="">None</option>
+							<option value="">Select one</option>
 							<?php
 								$i = 1;
 								foreach ($packages as $package) {
@@ -172,22 +172,21 @@
 								}
 							?>
 						</select>
-						<span><?php echo $packageError; ?></span>
+						<br><span><?php echo $packageError; ?></span>
 					</div>
 
-					<h3>Appointments must be requested at least 5 days in advance</h3>
-					<p><?php echo $dateTimeError; ?></p>
+					<span><?php echo $dateTimeError; ?></span>
 
 					<div id="dateSection" class="section">
-						<label for="date">Date</label><br>
-						<input type="date" name="date" id="date" class="required" placeholder="required (yyyy-mm-dd)" required value="<?php echo $date; ?>" />
-						<span><?php echo $dateError; ?></span>
+						<label for="date">Date</label><span id="subDate">(yyyy-mm-dd) At least 5 days in advance</span><br>
+						<input type="date" name="date" id="date" class="required" required value="<?php echo $date; ?>" />
+						<br><span><?php echo $dateError; ?></span>
 					</div>
 
 					<div id="timeSection" class="section">
-						<label for="time">Time</label><br>
-						<input type="time" name="time" id="time" class="required" placeholder="required (24-hour hh:mm)" required value="<?php echo $time; ?>" />
-						<span><?php echo $timeError; ?></span>
+						<label for="time">Time</label><span id="subTime">(24-hour hh:mm)</span><br>
+						<input type="time" name="time" id="time" class="required" required value="<?php echo $time; ?>" />
+						<br><span><?php echo $timeError; ?></span>
 					</div>
 
 					<div id="specialSection" class="section">

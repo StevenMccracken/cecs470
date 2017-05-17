@@ -3,8 +3,13 @@ header {
 }
 
 h1 {
+  margin-top: 2em;
   margin-bottom: 2%;
   font-size: 300%;
+}
+
+label, placeholder, li, span {
+  font-family: 'Muli', 'Arial', sans-serif;
 }
 
 ul {
@@ -13,13 +18,18 @@ ul {
 }
 
 #summary {
-  margin: 25 auto;
+  margin: 0 auto;
+  margin-left: 25%;
+  text-align: left;
+}
+
+li {
+  font-size: 190%;
 }
 
 fieldset {
   margin-top: 0;
-	margin-right: 20%;
-  margin-left: 20%;
+  margin-left: 30%;
 	text-align: left;
 	width: 75%;
   border: none;
@@ -34,8 +44,20 @@ fieldset {
 }
 
 input, option {
-	width: 75%;
+	width: 15em;
 	padding: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+#special {
+  width: 75%;
+}
+
+h2 {
+  margin-top: 2em;
+  font-size: 250%;
 }
 
 .section {
@@ -43,22 +65,18 @@ input, option {
 }
 
 .section label {
-  font-size: 210%;
+  font-size: 250%;
 }
 
 input[type="text"], input[type="tel"], input[type="date"], input[type="time"], select {
   border: none;
-  font-size: 150%;
+  font-size: 190%;
 }
 
 select {
   -webkit-appearance: none;
-  background-color: white;
+  background-color: transparent;
   padding-bottom: 20px;
-}
-
-option[value=None] {
-  color: gray;
 }
 
 input::placeholder {
@@ -66,10 +84,11 @@ input::placeholder {
 }
 
 input.button {
-  font-size: 115%;
+  font-size: 200%;
   border: none;
 	text-align: center;
-	width: 10%;
+	width: 6em;
+  height: 2em;
   background-color: black;
   color: white;
 }
@@ -78,4 +97,9 @@ input.button:hover {
   border: 1px solid black;
   background-color: white;
   color: black;
+}
+
+#subDate, #subPhone, #subTime {
+  font-size: 150%;
+  padding-left: 0.25em;
 }
